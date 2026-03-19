@@ -271,15 +271,54 @@
         }
 
         .cv-section {
-            margin-bottom: 50px;
+            margin-bottom: 30px;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 15px;
+            padding: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.3);
         }
 
-        .cv-section h3 {
+        .section-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            cursor: pointer;
+            margin-bottom: 15px;
+        }
+
+        .section-header h3 {
             font-size: 1.8rem;
             color: #1a2a3a;
-            margin-bottom: 25px;
-            border-bottom: 3px solid rgba(255, 255, 255, 0.5);
-            padding-bottom: 10px;
+            border-bottom: none;
+            padding-bottom: 0;
+            margin-bottom: 0;
+        }
+
+        .toggle-btn {
+            background: rgba(255, 255, 255, 0.8);
+            border: 1px solid rgba(255, 255, 255, 0.5);
+            color: #1a2a3a;
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            font-weight: bold;
+            transition: transform 0.3s ease;
+        }
+
+        .toggle-btn.rotated {
+            transform: rotate(90deg);
+        }
+
+        .section-content {
+            transition: all 0.3s ease;
+        }
+
+        .section-content.hidden {
+            display: none;
         }
 
         .cv-item {
@@ -327,6 +366,11 @@
             border-bottom: 2px solid #1a2a3a;
         }
 
+        /* Hide months and years in work experience and education */
+        .cv .cv-item .date {
+            display: none;
+        }
+
         .skills-list {
             display: flex;
             flex-wrap: wrap;
@@ -368,7 +412,159 @@
             color: #1a2a3a;
         }
 
-        /* Testimonials Section - NY! */
+        /* Hobbies Section (collapsible) */
+        .hobbies {
+            padding: 60px 0;
+        }
+
+        .hobbies .container {
+            background: rgba(255, 255, 255, 0.6);
+            backdrop-filter: blur(5px);
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .hobbies h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 30px;
+            color: #1a2a3a;
+        }
+
+        .hobbies-toggle {
+            background: rgba(255, 255, 255, 0.8);
+            border: 1px solid rgba(255, 255, 255, 0.5);
+            color: #1a2a3a;
+            font-size: 1.2rem;
+            font-weight: 600;
+            padding: 12px 20px;
+            width: 100%;
+            text-align: left;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: background 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .hobbies-toggle:hover {
+            background: rgba(255, 255, 255, 0.9);
+        }
+
+        .hobbies-toggle .arrow {
+            font-size: 1.4rem;
+            transition: transform 0.3s ease;
+        }
+
+        .hobbies-toggle.active .arrow {
+            transform: rotate(90deg);
+        }
+
+        .hobbies-content {
+            margin-top: 20px;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.4);
+            border-radius: 10px;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .hobbies-content.hidden {
+            display: none;
+        }
+
+        .hobbies-content ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .hobbies-content li {
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 1px dashed rgba(255, 255, 255, 0.5);
+        }
+
+        .hobbies-content li:last-child {
+            border-bottom: none;
+        }
+
+        .hobby-name {
+            font-weight: 700;
+            color: #1a2a3a;
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .hobby-details {
+            color: #1a2a3a;
+            padding-left: 15px;
+            font-size: 0.95rem;
+        }
+
+        /* Music grid inside hobbies */
+        .music-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .music-card {
+            background: rgba(255, 255, 255, 0.6);
+            backdrop-filter: blur(3px);
+            border-radius: 12px;
+            padding: 15px;
+            border: 1px solid rgba(255, 255, 255, 0.4);
+            transition: transform 0.2s ease;
+        }
+
+        .music-card:hover {
+            transform: translateY(-4px);
+            background: rgba(255, 255, 255, 0.8);
+        }
+
+        .music-card strong {
+            color: #1a2a3a;
+            font-size: 1.1rem;
+        }
+
+        .music-details {
+            margin: 8px 0;
+            color: #2d3436;
+        }
+
+        .music-details span {
+            display: inline-block;
+            background: rgba(0, 0, 0, 0.1);
+            padding: 3px 8px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            margin-right: 5px;
+        }
+
+        .music-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+            background: rgba(255, 255, 255, 0.9);
+            color: #1a2a3a;
+            padding: 8px 12px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-size: 0.9rem;
+            margin-top: 8px;
+            border: 1px solid rgba(0, 0, 0, 0.1);
+            transition: background 0.2s;
+        }
+
+        .music-link:hover {
+            background: #fff;
+            border-color: #1a2a3a;
+        }
+
+        /* Testimonials Section */
         .testimonials {
             padding: 60px 0;
         }
@@ -536,7 +732,8 @@
 
             .about .container,
             .cv .container,
-            .testimonials .container {
+            .testimonials .container,
+            .hobbies .container {
                 padding: 20px;
             }
         }
@@ -761,401 +958,644 @@
             </h2>
             <div class="cv-container">
                 
-                <!-- WORK EXPERIENCE -->
-                <div class="cv-section">
-                    <h3>
-                        <span class="lang-en active">Work Experience</span>
-                        <span class="lang-swe">Arbetslivserfarenhet</span>
-                        <span class="lang-fin">Työkokemus</span>
-                        <span class="lang-nl">Werkervaring</span>
-                    </h3>
-                    
-                    <!-- Stockfors -->
-                    <div class="cv-item">
-                        <h4>
-                            <span class="lang-en active">Forest Expert</span>
-                            <span class="lang-swe">Skogsexpert</span>
-                            <span class="lang-fin">Metsäasiantuntija</span>
-                            <span class="lang-nl">Bosexpert</span>
-                        </h4>
-                        <div class="company">Stockfors</div>
-                        <div class="date">
-                            <span class="lang-en active">February</span>
-                            <span class="lang-swe">Februari</span>
-                            <span class="lang-fin">Helmikuu</span>
-                            <span class="lang-nl">Februari</span>
-                            2026 - 
-                            <span class="lang-en active">Ongoing</span>
-                            <span class="lang-swe">Pågående</span>
-                            <span class="lang-fin">Jatkuva</span>
-                            <span class="lang-nl">Lopend</span>
-                        </div>
-                        <p>
-                            <span class="lang-en active">Developing comprehensive business documentation and educational materials for Stockfors. Providing expertise in forest-related issues and supporting operational development.</span>
-                            <span class="lang-swe">Utvecklar omfattande affärsdokumentation och utbildningsmaterial för Stockfors. Tillhandahåller expertis i skogsrelaterade frågor och stödjer verksamhetsutveckling.</span>
-                            <span class="lang-fin">Kehitän kattavaa liiketoimintadokumentaatiota ja koulutusmateriaaleja Stockforsille. Tarjoan asiantuntemusta metsäalan kysymyksissä ja tuen toiminnan kehittämistä.</span>
-                            <span class="lang-nl">Ontwikkel uitgebreide bedrijfsdocumentatie en educatief materiaal voor Stockfors. Bied expertise in bosgerelateerde vraagstukken en ondersteun operationele ontwikkeling.</span>
-                        </p>
+                <!-- WORK EXPERIENCE (collapsible) -->
+                <div class="cv-section" id="work-section">
+                    <div class="section-header" onclick="toggleSection('work-content', this.querySelector('.toggle-btn'))">
+                        <h3>
+                            <span class="lang-en active">Work Experience</span>
+                            <span class="lang-swe">Arbetslivserfarenhet</span>
+                            <span class="lang-fin">Työkokemus</span>
+                            <span class="lang-nl">Werkervaring</span>
+                        </h3>
+                        <span class="toggle-btn">▶</span>
                     </div>
-
-                    <!-- TK-Skog -->
-                    <div class="cv-item">
-                        <h4>
-                            <span class="lang-en active">Business Developer</span>
-                            <span class="lang-swe">Affärsutvecklare</span>
-                            <span class="lang-fin">Liiketoiminnan kehittäjä</span>
-                            <span class="lang-nl">Bedrijfsontwikkelaar</span>
-                        </h4>
-                        <div class="company">TK-Skog</div>
-                        <div class="date">
-                            <span class="lang-en active">October</span>
-                            <span class="lang-swe">Oktober</span>
-                            <span class="lang-fin">Lokakuu</span>
-                            <span class="lang-nl">Oktober</span>
-                            2025 - 
-                            <span class="lang-en active">January</span>
-                            <span class="lang-swe">Januari</span>
-                            <span class="lang-fin">Tammikuu</span>
-                            <span class="lang-nl">Januari</span>
-                            2026
+                    <div class="section-content hidden" id="work-content">
+                        <!-- Stockfors -->
+                        <div class="cv-item">
+                            <h4>
+                                <span class="lang-en active">Forest Expert</span>
+                                <span class="lang-swe">Skogsexpert</span>
+                                <span class="lang-fin">Metsäasiantuntija</span>
+                                <span class="lang-nl">Bosexpert</span>
+                            </h4>
+                            <div class="company">Stockfors</div>
+                            <div class="date">
+                                <span class="lang-en active">February</span>
+                                <span class="lang-swe">Februari</span>
+                                <span class="lang-fin">Helmikuu</span>
+                                <span class="lang-nl">Februari</span>
+                                2026 - 
+                                <span class="lang-en active">Ongoing</span>
+                                <span class="lang-swe">Pågående</span>
+                                <span class="lang-fin">Jatkuva</span>
+                                <span class="lang-nl">Lopend</span>
+                            </div>
+                            <p>
+                                <span class="lang-en active">Developing comprehensive business documentation and educational materials for Stockfors. Providing expertise in forest-related issues and supporting operational development.</span>
+                                <span class="lang-swe">Utvecklar omfattande affärsdokumentation och utbildningsmaterial för Stockfors. Tillhandahåller expertis i skogsrelaterade frågor och stödjer verksamhetsutveckling.</span>
+                                <span class="lang-fin">Kehitän kattavaa liiketoimintadokumentaatiota ja koulutusmateriaaleja Stockforsille. Tarjoan asiantuntemusta metsäalan kysymyksissä ja tuen toiminnan kehittämistä.</span>
+                                <span class="lang-nl">Ontwikkel uitgebreide bedrijfsdocumentatie en educatief materiaal voor Stockfors. Bied expertise in bosgerelateerde vraagstukken en ondersteun operationele ontwikkeling.</span>
+                            </p>
                         </div>
-                        <p>
-                            <span class="lang-en active">Contributed to the establishment of TK-Skog’s operations in northern Sweden by ensuring certifications, reviewing the business model and regulatory compliance, and developing efficient workflows.</span>
-                            <span class="lang-swe">Bidrog till etableringen av TK-Skogs verksamhet i norra Sverige genom att säkerställa certifieringar, granska affärsmodellen och regelefterlevnad samt utveckla effektiva arbetsprocesser.</span>
-                            <span class="lang-fin">Osallistuin TK-Skogs toiminnan käynnistämiseen Pohjois-Ruotsissa varmistamalla sertifioinnit, arvioimalla liiketoimintamallin ja lainsäädännön noudattamisen sekä kehittämällä tehokkaita työprosesseja.</span>
-                            <span class="lang-nl">Droeg bij aan de opzet van de activiteiten van TK-Skog in Noord-Zweden door certificeringen te waarborgen, het bedrijfsmodel en de naleving van regelgeving te beoordelen en efficiënte werkprocessen te ontwikkelen.</span>
-                        </p>
-                    </div>
 
-                    <!-- Stora Enso Metsä - Forest Mentor -->
-                    <div class="cv-item">
-                        <h4>
-                            <span class="lang-en active">Forest Mentor</span>
-                            <span class="lang-swe">Skogsmentor</span>
-                            <span class="lang-fin">Metsämentori</span>
-                            <span class="lang-nl">Bosmentor</span>
-                        </h4>
-                        <div class="company">Stora Enso Metsä</div>
-                        <div class="date">
-                            <span class="lang-en active">July</span>
-                            <span class="lang-swe">Juli</span>
-                            <span class="lang-fin">Heinäkuu</span>
-                            <span class="lang-nl">Juli</span>
-                            2025 - 
-                            <span class="lang-en active">October</span>
-                            <span class="lang-swe">Oktober</span>
-                            <span class="lang-fin">Lokakuu</span>
-                            <span class="lang-nl">Oktober</span>
-                            2025
+                        <!-- TK-Skog -->
+                        <div class="cv-item">
+                            <h4>
+                                <span class="lang-en active">Business Developer</span>
+                                <span class="lang-swe">Affärsutvecklare</span>
+                                <span class="lang-fin">Liiketoiminnan kehittäjä</span>
+                                <span class="lang-nl">Bedrijfsontwikkelaar</span>
+                            </h4>
+                            <div class="company">TK-Skog</div>
+                            <div class="date">
+                                <span class="lang-en active">October</span>
+                                <span class="lang-swe">Oktober</span>
+                                <span class="lang-fin">Lokakuu</span>
+                                <span class="lang-nl">Oktober</span>
+                                2025 - 
+                                <span class="lang-en active">January</span>
+                                <span class="lang-swe">Januari</span>
+                                <span class="lang-fin">Tammikuu</span>
+                                <span class="lang-nl">Januari</span>
+                                2026
+                            </div>
+                            <p>
+                                <span class="lang-en active">Contributed to the establishment of TK-Skog’s operations in northern Sweden by ensuring certifications, reviewing the business model and regulatory compliance, and developing efficient workflows.</span>
+                                <span class="lang-swe">Bidrog till etableringen av TK-Skogs verksamhet i norra Sverige genom att säkerställa certifieringar, granska affärsmodellen och regelefterlevnad samt utveckla effektiva arbetsprocesser.</span>
+                                <span class="lang-fin">Osallistuin TK-Skogs toiminnan käynnistämiseen Pohjois-Ruotsissa varmistamalla sertifioinnit, arvioimalla liiketoimintamallin ja lainsäädännön noudattamisen sekä kehittämällä tehokkaita työprosesseja.</span>
+                                <span class="lang-nl">Droeg bij aan de opzet van de activiteiten van TK-Skog in Noord-Zweden door certificeringen te waarborgen, het bedrijfsmodel en de naleving van regelgeving te beoordelen en efficiënte werkprocessen te ontwikkelen.</span>
+                            </p>
                         </div>
-                        <p>
-                            <span class="lang-en active">Analyzed and evaluated the new ERP system for Stora Enso Metsä and Stora Enso Skog. Identified integration points and potential API requirements between systems to optimize cross-border operations.</span>
-                            <span class="lang-swe">Analyserade och utvärderade det nya ERP-systemet för Stora Enso Metsä och Stora Enso Skog. Identifierade integrationspunkter och potentiella API-behov mellan system för att optimera gränsöverskridande verksamhet.</span>
-                            <span class="lang-fin">Analysoin ja arvioin uutta ERP-järjestelmää Stora Enso Metsälle ja Stora Enso Skogille. Tunnistin integraatiopisteitä ja mahdollisia API-tarpeita järjestelmien välillä rajat ylittävän toiminnan optimoimiseksi.</span>
-                            <span class="lang-nl">Analyseerde en evalueerde het nieuwe ERP-systeem voor Stora Enso Metsä en Stora Enso Skog. Identificeerde integratiepunten en mogelijke API-behoeften tussen systemen om grensoverschrijdende operaties te optimaliseren.</span>
-                        </p>
-                    </div>
 
-                    <!-- Stora Enso Skog - Key User -->
-                    <div class="cv-item">
-                        <h4>
-                            <span class="lang-en active">Key User</span>
-                            <span class="lang-swe">Nyckelanvändare</span>
-                            <span class="lang-fin">Avainkäyttäjä</span>
-                            <span class="lang-nl">Sleutelgebruiker</span>
-                        </h4>
-                        <div class="company">Stora Enso Skog</div>
-                        <div class="date">
-                            <span class="lang-en active">January</span>
-                            <span class="lang-swe">Januari</span>
-                            <span class="lang-fin">Tammikuu</span>
-                            <span class="lang-nl">Januari</span>
-                            2024 - 
-                            <span class="lang-en active">June</span>
-                            <span class="lang-swe">Juni</span>
-                            <span class="lang-fin">Kesäkuu</span>
-                            <span class="lang-nl">Juni</span>
-                            2025
+                        <!-- Stora Enso Metsä - Forest Mentor -->
+                        <div class="cv-item">
+                            <h4>
+                                <span class="lang-en active">Forest Mentor</span>
+                                <span class="lang-swe">Skogsmentor</span>
+                                <span class="lang-fin">Metsämentori</span>
+                                <span class="lang-nl">Bosmentor</span>
+                            </h4>
+                            <div class="company">Stora Enso Metsä</div>
+                            <div class="date">
+                                <span class="lang-en active">July</span>
+                                <span class="lang-swe">Juli</span>
+                                <span class="lang-fin">Heinäkuu</span>
+                                <span class="lang-nl">Juli</span>
+                                2025 - 
+                                <span class="lang-en active">October</span>
+                                <span class="lang-swe">Oktober</span>
+                                <span class="lang-fin">Lokakuu</span>
+                                <span class="lang-nl">Oktober</span>
+                                2025
+                            </div>
+                            <p>
+                                <span class="lang-en active">Analyzed and evaluated the new ERP system for Stora Enso Metsä and Stora Enso Skog. Identified integration points and potential API requirements between systems to optimize cross-border operations.</span>
+                                <span class="lang-swe">Analyserade och utvärderade det nya ERP-systemet för Stora Enso Metsä och Stora Enso Skog. Identifierade integrationspunkter och potentiella API-behov mellan system för att optimera gränsöverskridande verksamhet.</span>
+                                <span class="lang-fin">Analysoin ja arvioin uutta ERP-järjestelmää Stora Enso Metsälle ja Stora Enso Skogille. Tunnistin integraatiopisteitä ja mahdollisia API-tarpeita järjestelmien välillä rajat ylittävän toiminnan optimoimiseksi.</span>
+                                <span class="lang-nl">Analyseerde en evalueerde het nieuwe ERP-systeem voor Stora Enso Metsä en Stora Enso Skog. Identificeerde integratiepunten en mogelijke API-behoeften tussen systemen om grensoverschrijdende operaties te optimaliseren.</span>
+                            </p>
                         </div>
-                        <p>
-                            <span class="lang-en active">Developed CRM logic and optimized the wood purchasing application. Created comprehensive documentation for the forest owner website, enhancing user experience and system functionality.</span>
-                            <span class="lang-swe">Utvecklade CRM-logik och optimerade virkesinköpsapplikationen. Skapade omfattande dokumentation för skogsägarwebbplatsen, vilket förbättrade användarupplevelse och systemfunktionalitet.</span>
-                            <span class="lang-fin">Kehitin CRM-logiikkaa ja optimoin puunostosovellusta. Loin kattavan dokumentaation metsänomistajien verkkosivustolle parantaen käyttökokemusta ja järjestelmän toiminnallisuutta.</span>
-                            <span class="lang-nl">Ontwikkelde CRM-logica en optimaliseerde de houtaankoopapplicatie. Creëerde uitgebreide documentatie voor de boseigenarenwebsite, ter verbetering van gebruikerservaring en systeemfunctionaliteit.</span>
-                        </p>
-                    </div>
 
-                    <!-- Stora Enso Metsä - Concept Designer -->
-                    <div class="cv-item">
-                        <h4>
-                            <span class="lang-en active">Concept & Logic Designer</span>
-                            <span class="lang-swe">Koncept- och logikdesigner</span>
-                            <span class="lang-fin">Konsepti- ja logiikkasuunnittelija</span>
-                            <span class="lang-nl">Concept- en logicaontwerper</span>
-                        </h4>
-                        <div class="company">Stora Enso Metsä</div>
-                        <div class="date">
-                            <span class="lang-en active">October</span>
-                            <span class="lang-swe">Oktober</span>
-                            <span class="lang-fin">Lokakuu</span>
-                            <span class="lang-nl">Oktober</span>
-                            2022 - 
-                            <span class="lang-en active">December</span>
-                            <span class="lang-swe">December</span>
-                            <span class="lang-fin">Joulukuu</span>
-                            <span class="lang-nl">December</span>
-                            2023
+                        <!-- Stora Enso Skog - Key User -->
+                        <div class="cv-item">
+                            <h4>
+                                <span class="lang-en active">Key User</span>
+                                <span class="lang-swe">Nyckelanvändare</span>
+                                <span class="lang-fin">Avainkäyttäjä</span>
+                                <span class="lang-nl">Sleutelgebruiker</span>
+                            </h4>
+                            <div class="company">Stora Enso Skog</div>
+                            <div class="date">
+                                <span class="lang-en active">January</span>
+                                <span class="lang-swe">Januari</span>
+                                <span class="lang-fin">Tammikuu</span>
+                                <span class="lang-nl">Januari</span>
+                                2024 - 
+                                <span class="lang-en active">June</span>
+                                <span class="lang-swe">Juni</span>
+                                <span class="lang-fin">Kesäkuu</span>
+                                <span class="lang-nl">Juni</span>
+                                2025
+                            </div>
+                            <p>
+                                <span class="lang-en active">Developed CRM logic and optimized the wood purchasing application. Created comprehensive documentation for the forest owner website, enhancing user experience and system functionality.</span>
+                                <span class="lang-swe">Utvecklade CRM-logik och optimerade virkesinköpsapplikationen. Skapade omfattande dokumentation för skogsägarwebbplatsen, vilket förbättrade användarupplevelse och systemfunktionalitet.</span>
+                                <span class="lang-fin">Kehitin CRM-logiikkaa ja optimoin puunostosovellusta. Loin kattavan dokumentaation metsänomistajien verkkosivustolle parantaen käyttökokemusta ja järjestelmän toiminnallisuutta.</span>
+                                <span class="lang-nl">Ontwikkelde CRM-logica en optimaliseerde de houtaankoopapplicatie. Creëerde uitgebreide documentatie voor de boseigenarenwebsite, ter verbetering van gebruikerservaring en systeemfunctionaliteit.</span>
+                            </p>
                         </div>
-                        <p>
-                            <span class="lang-en active">Designed concepts and logic for the eMetsä website project. Defined user journeys and information architecture for this digital service serving forest owners in Finland.</span>
-                            <span class="lang-swe">Designade koncept och logik för eMetsä-webbplatsprojektet. Definierade användarresor och informationsarkitektur för denna digitala tjänst som betjänar skogsägare i Finland.</span>
-                            <span class="lang-fin">Suunnittelin konsepteja ja logiikkaa eMetsä-verkkosivustoprojektille. Määrittelin käyttäjäpolkuja ja tietoarkkitehtuuria tälle suomalaisia metsänomistajia palvelevalle digitaaliselle palvelulle.</span>
-                            <span class="lang-nl">Ontwierp concepten en logica voor het eMetsä website project. Definieerde gebruikersreizen en informatiearchitectuur voor deze digitale dienst voor boseigenaren in Finland.</span>
-                        </p>
-                    </div>
 
-                    <!-- Stora Enso Metsä - Timber Buyer -->
-                    <div class="cv-item">
-                        <h4>
-                            <span class="lang-en active">Timber Buyer</span>
-                            <span class="lang-swe">Virkesinköpare</span>
-                            <span class="lang-fin">Puunostaja</span>
-                            <span class="lang-nl">Houtinkoper</span>
-                        </h4>
-                        <div class="company">Stora Enso Metsä</div>
-                        <div class="date">
-                            <span class="lang-en active">November</span>
-                            <span class="lang-swe">November</span>
-                            <span class="lang-fin">Marraskuu</span>
-                            <span class="lang-nl">November</span>
-                            2021 - 
-                            <span class="lang-en active">October</span>
-                            <span class="lang-swe">Oktober</span>
-                            <span class="lang-fin">Lokakuu</span>
-                            <span class="lang-nl">Oktober</span>
-                            2022
+                        <!-- Stora Enso Metsä - Concept Designer -->
+                        <div class="cv-item">
+                            <h4>
+                                <span class="lang-en active">Concept & Logic Designer</span>
+                                <span class="lang-swe">Koncept- och logikdesigner</span>
+                                <span class="lang-fin">Konsepti- ja logiikkasuunnittelija</span>
+                                <span class="lang-nl">Concept- en logicaontwerper</span>
+                            </h4>
+                            <div class="company">Stora Enso Metsä</div>
+                            <div class="date">
+                                <span class="lang-en active">October</span>
+                                <span class="lang-swe">Oktober</span>
+                                <span class="lang-fin">Lokakuu</span>
+                                <span class="lang-nl">Oktober</span>
+                                2022 - 
+                                <span class="lang-en active">December</span>
+                                <span class="lang-swe">December</span>
+                                <span class="lang-fin">Joulukuu</span>
+                                <span class="lang-nl">December</span>
+                                2023
+                            </div>
+                            <p>
+                                <span class="lang-en active">Designed concepts and logic for the eMetsä website project. Defined user journeys and information architecture for this digital service serving forest owners in Finland.</span>
+                                <span class="lang-swe">Designade koncept och logik för eMetsä-webbplatsprojektet. Definierade användarresor och informationsarkitektur för denna digitala tjänst som betjänar skogsägare i Finland.</span>
+                                <span class="lang-fin">Suunnittelin konsepteja ja logiikkaa eMetsä-verkkosivustoprojektille. Määrittelin käyttäjäpolkuja ja tietoarkkitehtuuria tälle suomalaisia metsänomistajia palvelevalle digitaaliselle palvelulle.</span>
+                                <span class="lang-nl">Ontwierp concepten en logica voor het eMetsä website project. Definieerde gebruikersreizen en informatiearchitectuur voor deze digitale dienst voor boseigenaren in Finland.</span>
+                            </p>
                         </div>
-                        <p>
-                            <span class="lang-en active">Gained extensive experience in timber purchasing and forest service package sales. Developed strong understanding of customer needs and market dynamics in southern Finland.</span>
-                            <span class="lang-swe">Fick omfattande erfarenhet av virkesinköp och försäljning av skogsservicepaket. Utvecklade stark förståelse för kundbehov och marknadsdynamik i södra Finland.</span>
-                            <span class="lang-fin">Sain laajaa kokemusta puun ostosta ja metsäpalvelupakettien myynnistä. Kehitin vahvan ymmärryksen asiakastarpeista ja markkinadynamiikasta Etelä-Suomessa.</span>
-                            <span class="lang-nl">Verwierf uitgebreide ervaring in houtinkoop en verkoop van bosdienstpakketten. Ontwikkelde sterk begrip van klantbehoeften en marktdynamiek in Zuid-Finland.</span>
-                        </p>
-                    </div>
 
-                    <!-- Stora Enso Skog - Production Leader -->
-                    <div class="cv-item">
-                        <h4>
-                            <span class="lang-en active">Production Leader</span>
-                            <span class="lang-swe">Produktionsledare</span>
-                            <span class="lang-fin">Tuotantopäällikkö</span>
-                            <span class="lang-nl">Productieleider</span>
-                        </h4>
-                        <div class="company">Stora Enso Skog</div>
-                        <div class="date">
-                            <span class="lang-en active">May</span>
-                            <span class="lang-swe">Maj</span>
-                            <span class="lang-fin">Toukokuu</span>
-                            <span class="lang-nl">Mei</span>
-                            2021 - 
-                            <span class="lang-en active">November</span>
-                            <span class="lang-swe">November</span>
-                            <span class="lang-fin">Marraskuu</span>
-                            <span class="lang-nl">November</span>
-                            2021
+                        <!-- Stora Enso Metsä - Timber Buyer -->
+                        <div class="cv-item">
+                            <h4>
+                                <span class="lang-en active">Timber Buyer</span>
+                                <span class="lang-swe">Virkesinköpare</span>
+                                <span class="lang-fin">Puunostaja</span>
+                                <span class="lang-nl">Houtinkoper</span>
+                            </h4>
+                            <div class="company">Stora Enso Metsä</div>
+                            <div class="date">
+                                <span class="lang-en active">November</span>
+                                <span class="lang-swe">November</span>
+                                <span class="lang-fin">Marraskuu</span>
+                                <span class="lang-nl">November</span>
+                                2021 - 
+                                <span class="lang-en active">October</span>
+                                <span class="lang-swe">Oktober</span>
+                                <span class="lang-fin">Lokakuu</span>
+                                <span class="lang-nl">Oktober</span>
+                                2022
+                            </div>
+                            <p>
+                                <span class="lang-en active">Gained extensive experience in timber purchasing and forest service package sales. Developed strong understanding of customer needs and market dynamics in southern Finland.</span>
+                                <span class="lang-swe">Fick omfattande erfarenhet av virkesinköp och försäljning av skogsservicepaket. Utvecklade stark förståelse för kundbehov och marknadsdynamik i södra Finland.</span>
+                                <span class="lang-fin">Sain laajaa kokemusta puun ostosta ja metsäpalvelupakettien myynnistä. Kehitin vahvan ymmärryksen asiakastarpeista ja markkinadynamiikasta Etelä-Suomessa.</span>
+                                <span class="lang-nl">Verwierf uitgebreide ervaring in houtinkoop en verkoop van bosdienstpakketten. Ontwikkelde sterk begrip van klantbehoeften en marktdynamiek in Zuid-Finland.</span>
+                            </p>
                         </div>
-                        <p>
-                            <span class="lang-en active">Developed an Excel-based solution for Stora Enso Skog that streamlined production tracking and reporting. Managed production operations in Värmland county.</span>
-                            <span class="lang-swe">Utvecklade en Excel-baserad lösning för Stora Enso Skog som effektiviserade produktionsuppföljning och rapportering. Ledde produktionsverksamhet i Värmlands län.</span>
-                            <span class="lang-fin">Kehitin Excel-pohjaisen ratkaisun Stora Enso Skogille, joka tehosti tuotannon seurantaa ja raportointia. Johdin tuotantotoimintaa Värmlandin läänissä.</span>
-                            <span class="lang-nl">Ontwikkelde een Excel-gebaseerde oplossing voor Stora Enso Skog die productie tracking en rapportage stroomlijnde. Leidde productieoperaties in de provincie Värmland.</span>
-                        </p>
-                    </div>
 
-                    <!-- Kopparfors Skogar -->
-                    <div class="cv-item">
-                        <h4>
-                            <span class="lang-en active">Forest Planner</span>
-                            <span class="lang-swe">Skogsplanerare</span>
-                            <span class="lang-fin">Metsäsuunnittelija</span>
-                            <span class="lang-nl">Bosplanner</span>
-                        </h4>
-                        <div class="company">Kopparfors Skogar</div>
-                        <div class="date">
-                            <span class="lang-en active">April</span>
-                            <span class="lang-swe">April</span>
-                            <span class="lang-fin">Huhtikuu</span>
-                            <span class="lang-nl">April</span>
-                            2020 - 
-                            <span class="lang-en active">December</span>
-                            <span class="lang-swe">December</span>
-                            <span class="lang-fin">Joulukuu</span>
-                            <span class="lang-nl">December</span>
-                            2020
+                        <!-- Stora Enso Skog - Production Leader -->
+                        <div class="cv-item">
+                            <h4>
+                                <span class="lang-en active">Production Leader</span>
+                                <span class="lang-swe">Produktionsledare</span>
+                                <span class="lang-fin">Tuotantopäällikkö</span>
+                                <span class="lang-nl">Productieleider</span>
+                            </h4>
+                            <div class="company">Stora Enso Skog</div>
+                            <div class="date">
+                                <span class="lang-en active">May</span>
+                                <span class="lang-swe">Maj</span>
+                                <span class="lang-fin">Toukokuu</span>
+                                <span class="lang-nl">Mei</span>
+                                2021 - 
+                                <span class="lang-en active">November</span>
+                                <span class="lang-swe">November</span>
+                                <span class="lang-fin">Marraskuu</span>
+                                <span class="lang-nl">November</span>
+                                2021
+                            </div>
+                            <p>
+                                <span class="lang-en active">Developed an Excel-based solution for Stora Enso Skog that streamlined production tracking and reporting. Managed production operations in Värmland county.</span>
+                                <span class="lang-swe">Utvecklade en Excel-baserad lösning för Stora Enso Skog som effektiviserade produktionsuppföljning och rapportering. Ledde produktionsverksamhet i Värmlands län.</span>
+                                <span class="lang-fin">Kehitin Excel-pohjaisen ratkaisun Stora Enso Skogille, joka tehosti tuotannon seurantaa ja raportointia. Johdin tuotantotoimintaa Värmlandin läänissä.</span>
+                                <span class="lang-nl">Ontwikkelde een Excel-gebaseerde oplossing voor Stora Enso Skog die productie tracking en rapportage stroomlijnde. Leidde productieoperaties in de provincie Värmland.</span>
+                            </p>
                         </div>
-                        <p>
-                            <span class="lang-en active">Conducted forest planning operations and researched drone and digital applications in forestry across Gävleborg and Värmland counties. Explored innovative solutions for forest management.</span>
-                            <span class="lang-swe">Genomförde skogsplaneringsoperationer och forskade om drönar- och digitala tillämpningar inom skogsbruk i Gävleborgs och Värmlands län. Utforskade innovativa lösningar för skogsförvaltning.</span>
-                            <span class="lang-fin">Suoritin metsäsuunnitteluoperaatioita ja tutkin drone- ja digitaalisia sovelluksia metsätaloudessa Gävleborgin ja Värmlandin lääneissä. Tutkin innovatiivisia ratkaisuja metsänhoitoon.</span>
-                            <span class="lang-nl">Voerde bosplanning operaties uit en onderzocht drone- en digitale toepassingen in de bosbouw in de provincies Gävleborg en Värmland. Onderzocht innovatieve oplossingen voor bosbeheer.</span>
-                        </p>
-                    </div>
 
-                    <!-- Stora Enso Skog - Summer Job -->
-                    <div class="cv-item">
-                        <h4>
-                            <span class="lang-en active">Forest Planner</span>
-                            <span class="lang-swe">Skogsplanerare</span>
-                            <span class="lang-fin">Metsäsuunnittelija</span>
-                            <span class="lang-nl">Bosplanner</span>
-                        </h4>
-                        <div class="company">Stora Enso Skog</div>
-                        <div class="date">
-                            <span class="lang-en active">May</span>
-                            <span class="lang-swe">Maj</span>
-                            <span class="lang-fin">Toukokuu</span>
-                            <span class="lang-nl">Mei</span>
-                            2019 - 
-                            <span class="lang-en active">September</span>
-                            <span class="lang-swe">September</span>
-                            <span class="lang-fin">Syyskuu</span>
-                            <span class="lang-nl">September</span>
-                            2019
+                        <!-- Kopparfors Skogar -->
+                        <div class="cv-item">
+                            <h4>
+                                <span class="lang-en active">Forest Planner</span>
+                                <span class="lang-swe">Skogsplanerare</span>
+                                <span class="lang-fin">Metsäsuunnittelija</span>
+                                <span class="lang-nl">Bosplanner</span>
+                            </h4>
+                            <div class="company">Kopparfors Skogar</div>
+                            <div class="date">
+                                <span class="lang-en active">April</span>
+                                <span class="lang-swe">April</span>
+                                <span class="lang-fin">Huhtikuu</span>
+                                <span class="lang-nl">April</span>
+                                2020 - 
+                                <span class="lang-en active">December</span>
+                                <span class="lang-swe">December</span>
+                                <span class="lang-fin">Joulukuu</span>
+                                <span class="lang-nl">December</span>
+                                2020
+                            </div>
+                            <p>
+                                <span class="lang-en active">Conducted forest planning operations and researched drone and digital applications in forestry across Gävleborg and Värmland counties. Explored innovative solutions for forest management.</span>
+                                <span class="lang-swe">Genomförde skogsplaneringsoperationer och forskade om drönar- och digitala tillämpningar inom skogsbruk i Gävleborgs och Värmlands län. Utforskade innovativa lösningar för skogsförvaltning.</span>
+                                <span class="lang-fin">Suoritin metsäsuunnitteluoperaatioita ja tutkin drone- ja digitaalisia sovelluksia metsätaloudessa Gävleborgin ja Värmlandin lääneissä. Tutkin innovatiivisia ratkaisuja metsänhoitoon.</span>
+                                <span class="lang-nl">Voerde bosplanning operaties uit en onderzocht drone- en digitale toepassingen in de bosbouw in de provincies Gävleborg en Värmland. Onderzocht innovatieve oplossingen voor bosbeheer.</span>
+                            </p>
                         </div>
-                        <p>
-                            <span class="lang-en active">Performed forest planning duties in Gävleborg county during summer employment. Gained foundational experience in forestry operations and planning processes.</span>
-                            <span class="lang-swe">Utförde skogsplaneringsuppgifter i Gävleborgs län under sommaranställning. Fick grundläggande erfarenhet av skogsbruksverksamhet och planeringsprocesser.</span>
-                            <span class="lang-fin">Suoritin metsäsuunnittelutehtäviä Gävleborgin läänissä kesätyönä. Sain peruskokemusta metsätalouden toiminnasta ja suunnitteluprosesseista.</span>
-                            <span class="lang-nl">Voerde bosplanning taken uit in de provincie Gävleborg tijdens zomerwerk. Verwierf fundamentele ervaring in bosbouwoperaties en planningsprocessen.</span>
-                        </p>
+
+                        <!-- Stora Enso Skog - Summer Job -->
+                        <div class="cv-item">
+                            <h4>
+                                <span class="lang-en active">Forest Planner</span>
+                                <span class="lang-swe">Skogsplanerare</span>
+                                <span class="lang-fin">Metsäsuunnittelija</span>
+                                <span class="lang-nl">Bosplanner</span>
+                            </h4>
+                            <div class="company">Stora Enso Skog</div>
+                            <div class="date">
+                                <span class="lang-en active">May</span>
+                                <span class="lang-swe">Maj</span>
+                                <span class="lang-fin">Toukokuu</span>
+                                <span class="lang-nl">Mei</span>
+                                2019 - 
+                                <span class="lang-en active">September</span>
+                                <span class="lang-swe">September</span>
+                                <span class="lang-fin">Syyskuu</span>
+                                <span class="lang-nl">September</span>
+                                2019
+                            </div>
+                            <p>
+                                <span class="lang-en active">Performed forest planning duties in Gävleborg county during summer employment. Gained foundational experience in forestry operations and planning processes.</span>
+                                <span class="lang-swe">Utförde skogsplaneringsuppgifter i Gävleborgs län under sommaranställning. Fick grundläggande erfarenhet av skogsbruksverksamhet och planeringsprocesser.</span>
+                                <span class="lang-fin">Suoritin metsäsuunnittelutehtäviä Gävleborgin läänissä kesätyönä. Sain peruskokemusta metsätalouden toiminnasta ja suunnitteluprosesseista.</span>
+                                <span class="lang-nl">Voerde bosplanning taken uit in de provincie Gävleborg tijdens zomerwerk. Verwierf fundamentele ervaring in bosbouwoperaties en planningsprocessen.</span>
+                            </p>
+                        </div>
                     </div>
                 </div>
 
-                <!-- EDUCATION SECTION -->
-                <div class="cv-section">
-                    <h3>
-                        <span class="lang-en active">Education</span>
-                        <span class="lang-swe">Utbildning</span>
-                        <span class="lang-fin">Koulutus</span>
-                        <span class="lang-nl">Opleiding</span>
-                    </h3>
-                    
-                    <!-- Master's Degree -->
-                    <div class="cv-item">
-                        <h4>
-                            <span class="lang-en active">Master of Natural Resources Management</span>
-                            <span class="lang-swe">Skogsbruksingenjör (M.S.)</span>
-                            <span class="lang-fin">Metsätalousinsinööri (M.S.)</span>
-                            <span class="lang-nl">Master in Bosbouw (M.S.)</span>
-                        </h4>
-                        <div class="company">Novia University of Applied Sciences</div>
-                        <div class="date">2023 - 2025</div>
-                        <p>
-                            <span class="lang-en active">Thesis: "Wood Purchaser App" - Research and development of digital solutions for timber procurement. <a href="https://www.theseus.fi/handle/10024/895288" target="_blank">View thesis</a></span>
-                            <span class="lang-swe">Examensarbete: "Wood Purchaser App" - Forskning och utveckling av digitala lösningar för virkesanskaffning. <a href="https://www.theseus.fi/handle/10024/895288" target="_blank">Se examensarbete</a></span>
-                            <span class="lang-fin">Opinnäytetyö: "Wood Purchaser App" - Digitaalisten ratkaisujen tutkimus ja kehitys puun hankintaan. <a href="https://www.theseus.fi/handle/10024/895288" target="_blank">Katso opinnäytetyö</a></span>
-                            <span class="lang-nl">Thesis: "Wood Purchaser App" - Onderzoek en ontwikkeling van digitale oplossingen voor houtinkoop. <a href="https://www.theseus.fi/handle/10024/895288" target="_blank">Bekijk thesis</a></span>
-                        </p>
+                <!-- EDUCATION SECTION (collapsible) -->
+                <div class="cv-section" id="education-section">
+                    <div class="section-header" onclick="toggleSection('education-content', this.querySelector('.toggle-btn'))">
+                        <h3>
+                            <span class="lang-en active">Education</span>
+                            <span class="lang-swe">Utbildning</span>
+                            <span class="lang-fin">Koulutus</span>
+                            <span class="lang-nl">Opleiding</span>
+                        </h3>
+                        <span class="toggle-btn">▶</span>
                     </div>
+                    <div class="section-content hidden" id="education-content">
+                        <!-- Master's Degree -->
+                        <div class="cv-item">
+                            <h4>
+                                <span class="lang-en active">Master of Natural Resources Management</span>
+                                <span class="lang-swe">Skogsbruksingenjör (M.S.)</span>
+                                <span class="lang-fin">Metsätalousinsinööri (M.S.)</span>
+                                <span class="lang-nl">Master in Bosbouw (M.S.)</span>
+                            </h4>
+                            <div class="company">Novia University of Applied Sciences</div>
+                            <div class="date">2023 - 2025</div>
+                            <p>
+                                <span class="lang-en active">Thesis: "Wood Purchaser App" - Research and development of digital solutions for timber procurement. <a href="https://www.theseus.fi/handle/10024/895288" target="_blank">View thesis</a></span>
+                                <span class="lang-swe">Examensarbete: "Wood Purchaser App" - Forskning och utveckling av digitala lösningar för virkesanskaffning. <a href="https://www.theseus.fi/handle/10024/895288" target="_blank">Se examensarbete</a></span>
+                                <span class="lang-fin">Opinnäytetyö: "Wood Purchaser App" - Digitaalisten ratkaisujen tutkimus ja kehitys puun hankintaan. <a href="https://www.theseus.fi/handle/10024/895288" target="_blank">Katso opinnäytetyö</a></span>
+                                <span class="lang-nl">Thesis: "Wood Purchaser App" - Onderzoek en ontwikkeling van digitale oplossingen voor houtinkoop. <a href="https://www.theseus.fi/handle/10024/895288" target="_blank">Bekijk thesis</a></span>
+                            </p>
+                        </div>
 
-                    <!-- Exchange Studies -->
-                    <div class="cv-item">
-                        <h4>
-                            <span class="lang-en active">Exchange Student - International Timber Trade</span>
-                            <span class="lang-swe">Utbytesstudent - Internationell virkeshandel</span>
-                            <span class="lang-fin">Vaihto-opiskelija - Kansainvälinen puukauppa</span>
-                            <span class="lang-nl">Exchange Student - Internationale Houthandel</span>
-                        </h4>
-                        <div class="company">Van Hall Larenstein University of Applied Sciences, Netherlands</div>
-                        <div class="date">2019 - 2020</div>
-                        <p>
-                            <span class="lang-en active">Specialized in international timber trade and sustainable entrepreneurship. Gained cross-cultural perspective on European forestry markets.</span>
-                            <span class="lang-swe">Specialiserade mig på internationell virkeshandel och hållbart företagande. Fick tvärkulturellt perspektiv på europeiska skogsmarknader.</span>
-                            <span class="lang-fin">Erikoistuin kansainväliseen puukauppaan ja kestävään yrittäjyyteen. Sain kulttuurien välisen näkökulman eurooppalaisiin metsämarkkinoihin.</span>
-                            <span class="lang-nl">Gespecialiseerd in internationale houthandel en duurzaam ondernemerschap. Verwierf intercultureel perspectief op Europese bosmarkten.</span>
-                        </p>
-                    </div>
+                        <!-- Exchange Studies -->
+                        <div class="cv-item">
+                            <h4>
+                                <span class="lang-en active">Exchange Student - International Timber Trade</span>
+                                <span class="lang-swe">Utbytesstudent - Internationell virkeshandel</span>
+                                <span class="lang-fin">Vaihto-opiskelija - Kansainvälinen puukauppa</span>
+                                <span class="lang-nl">Exchange Student - Internationale Houthandel</span>
+                            </h4>
+                            <div class="company">Van Hall Larenstein University of Applied Sciences, Netherlands</div>
+                            <div class="date">2019 - 2020</div>
+                            <p>
+                                <span class="lang-en active">Specialized in international timber trade and sustainable entrepreneurship. Gained cross-cultural perspective on European forestry markets.</span>
+                                <span class="lang-swe">Specialiserade mig på internationell virkeshandel och hållbart företagande. Fick tvärkulturellt perspektiv på europeiska skogsmarknader.</span>
+                                <span class="lang-fin">Erikoistuin kansainväliseen puukauppaan ja kestävään yrittäjyyteen. Sain kulttuurien välisen näkökulman eurooppalaisiin metsämarkkinoihin.</span>
+                                <span class="lang-nl">Gespecialiseerd in internationale houthandel en duurzaam ondernemerschap. Verwierf intercultureel perspectief op Europese bosmarkten.</span>
+                            </p>
+                        </div>
 
-                    <!-- Bachelor's Degree -->
-                    <div class="cv-item">
-                        <h4>
-                            <span class="lang-en active">Bachelor of Natural Resources</span>
-                            <span class="lang-swe">Skogsbruksingenjör (B.S.)</span>
-                            <span class="lang-fin">Metsätalousinsinööri (B.S.)</span>
-                            <span class="lang-nl">Bachelor in Bosbouw (B.S.</span>
-                        </h4>
-                        <div class="company">Novia University of Applied Sciences</div>
-                        <div class="date">2017 - 2021</div>
-                        <p>
-                            <span class="lang-en active">Thesis: "Rekreationsskogens möjligheter" - Study on forest use for recreational purposes and its implications. <a href="https://www.theseus.fi/handle/10024/503106" target="_blank">View thesis</a></span>
-                            <span class="lang-swe">Examensarbete: "Rekreationsskogens möjligheter" - Studie om skogsbruk för rekreationsändamål och dess implikationer. <a href="https://www.theseus.fi/handle/10024/503106" target="_blank">Se examensarbete</a></span>
-                            <span class="lang-fin">Opinnäytetyö: "Rekreationsskogens möjligheter" - Tutkimus metsien virkistyskäytöstä ja sen vaikutuksista. <a href="https://www.theseus.fi/handle/10024/503106" target="_blank">Katso opinnäytetyö</a></span>
-                            <span class="lang-nl">Thesis: "Rekreationsskogens möjligheter" - Studie over bosgebruik voor recreatieve doeleinden en de implicaties ervan. <a href="https://www.theseus.fi/handle/10024/503106" target="_blank">Bekijk thesis</a></span>
-                        </p>
+                        <!-- Bachelor's Degree -->
+                        <div class="cv-item">
+                            <h4>
+                                <span class="lang-en active">Bachelor of Natural Resources</span>
+                                <span class="lang-swe">Skogsbruksingenjör (B.S.)</span>
+                                <span class="lang-fin">Metsätalousinsinööri (B.S.)</span>
+                                <span class="lang-nl">Bachelor in Bosbouw (B.S.)</span>
+                            </h4>
+                            <div class="company">Novia University of Applied Sciences</div>
+                            <div class="date">2017 - 2021</div>
+                            <p>
+                                <span class="lang-en active">Thesis: "Rekreationsskogens möjligheter" - Study on forest use for recreational purposes and its implications. <a href="https://www.theseus.fi/handle/10024/503106" target="_blank">View thesis</a></span>
+                                <span class="lang-swe">Examensarbete: "Rekreationsskogens möjligheter" - Studie om skogsbruk för rekreationsändamål och dess implikationer. <a href="https://www.theseus.fi/handle/10024/503106" target="_blank">Se examensarbete</a></span>
+                                <span class="lang-fin">Opinnäytetyö: "Rekreationsskogens möjligheter" - Tutkimus metsien virkistyskäytöstä ja sen vaikutuksista. <a href="https://www.theseus.fi/handle/10024/503106" target="_blank">Katso opinnäytetyö</a></span>
+                                <span class="lang-nl">Thesis: "Rekreationsskogens möjligheter" - Studie over bosgebruik voor recreatieve doeleinden en de implicaties ervan. <a href="https://www.theseus.fi/handle/10024/503106" target="_blank">Bekijk thesis</a></span>
+                            </p>
+                        </div>
+
+                        <!-- Lappfjärd Folkhögskola -->
+                        <div class="cv-item">
+                            <h4>
+                                <span class="lang-en active">Music Production</span>
+                                <span class="lang-swe">Musikproduktion</span>
+                                <span class="lang-fin">Musiikkituotanto</span>
+                                <span class="lang-nl">Muziekproductie</span>
+                            </h4>
+                            <div class="company">
+                                <span class="lang-en active">Lappfjärd Folkhögskola</span>
+                                <span class="lang-swe">Lappfjärd Folkhögskola</span>
+                                <span class="lang-fin">Lappfjärd Folkhögskola</span>
+                                <span class="lang-nl">Lappfjärd Folkhögskola</span>
+                            </div>
+                            <div class="date">–</div>
+                            <p>
+                                <span class="lang-en active">Learned how to produce music and how the music industry works.</span>
+                                <span class="lang-swe">Lärde mig att producera musik och hur musikbranschen fungerar.</span>
+                                <span class="lang-fin">Opin musiikin tuottamisen ja musiikkiteollisuuden toiminnan.</span>
+                                <span class="lang-nl">Leerde muziek produceren en hoe de muziekindustrie werkt.</span>
+                            </p>
+                        </div>
+
+                        <!-- Lärkkulla Folkakademi -->
+                        <div class="cv-item">
+                            <h4>
+                                <span class="lang-en active">Musician</span>
+                                <span class="lang-swe">Musiker</span>
+                                <span class="lang-fin">Muusikko</span>
+                                <span class="lang-nl">Muzikant</span>
+                            </h4>
+                            <div class="company">
+                                <span class="lang-en active">Lärkkulla Folkakademi</span>
+                                <span class="lang-swe">Lärkkulla Folkakademi</span>
+                                <span class="lang-fin">Lärkkulla Folkakademi</span>
+                                <span class="lang-nl">Lärkkulla Folkakademi</span>
+                            </div>
+                            <div class="date">–</div>
+                            <p>
+                                <span class="lang-en active">3/3 in music theory and instrument knowledge.</span>
+                                <span class="lang-swe">3/3 i musikteori och instrumentkunskap.</span>
+                                <span class="lang-fin">3/3 musiikin teoriassa ja instrumenttiosaamisessa.</span>
+                                <span class="lang-nl">3/3 in muziektheorie en instrumentkennis.</span>
+                            </p>
+                        </div>
+
+                        <!-- Västra Nylands Folkhögskola -->
+                        <div class="cv-item">
+                            <h4>
+                                <span class="lang-en active">Thinnsmith and welder</span>
+                                <span class="lang-swe">Plåtslagare och svetsare</span>
+                                <span class="lang-fin">Peltiseppä ja hitsaaja</span>
+                                <span class="lang-nl">Plaatwerker en lasser</span>
+                            </h4>
+                            <div class="company">
+                                <span class="lang-en active">Västra Nylands Yrkesskola</span>
+                                <span class="lang-swe">Västra Nylands Yrkesskola</span>
+                                <span class="lang-fin">Västra Nylands Yrkesskola</span>
+                                <span class="lang-nl">Västra Nylands Yrkesskola</span>
+                            </div>
+                            <div class="date">–</div>
+                            <p>
+                                <span class="lang-en active">Vocational school where I learned valuable skills for later in life.</span>
+                                <span class="lang-swe">Yrkesskola där jag lärde mig värdefulla färdigheter för senare i livet.</span>
+                                <span class="lang-fin">Ammattikoulu, jossa opin arvokkaita taitoja myöhempää elämää varten.</span>
+                                <span class="lang-nl">Beroepsschool waar ik waardevolle vaardigheden leerde voor later in het leven.</span>
+                            </p>
+                        </div>
                     </div>
                 </div>
 
-                <!-- ==================== SKILLS SECTION ==================== -->
-                <div class="cv-section">
-                    <h3>
-                        <span class="lang-en active">Skills & Competencies</span>
-                        <span class="lang-swe">Färdigheter & Kompetenser</span>
-                        <span class="lang-fin">Taidot & Pätevyydet</span>
-                        <span class="lang-nl">Vaardigheden & Competenties</span>
-                    </h3>
-                    
-                    <div class="skills-grid">
-                        <!-- Languages -->
-                        <div>
-                            <h4>
-                                <span class="lang-en active">Languages</span>
-                                <span class="lang-swe">Språk</span>
-                                <span class="lang-fin">Kielet</span>
-                                <span class="lang-nl">Talen</span>
-                            </h4>
-                            <ul style="list-style: none; padding: 0;">
-                                <li><strong>Swedish:</strong> <span class="lang-en active">Native</span><span class="lang-swe">Modersmål</span><span class="lang-fin">Äidinkieli</span><span class="lang-nl">Moedertaal</span></li>
-                                <li><strong>English:</strong> <span class="lang-en active">Excellent</span><span class="lang-swe">Utmärkt</span><span class="lang-fin">Erinomainen</span><span class="lang-nl">Uitstekend</span></li>
-                                <li><strong>Finnish:</strong> <span class="lang-en active">Strong</span><span class="lang-swe">Stark</span><span class="lang-fin">Vahva</span><span class="lang-nl">Sterk</span></li>
-                                <li><strong>Dutch:</strong> <span class="lang-en active">Intermediate</span><span class="lang-swe">Medel</span><span class="lang-fin">Keskitaso</span><span class="lang-nl">Gemiddeld</span></li>
-                            </ul>
+                <!-- SKILLS & COMPETENCIES (collapsible) -->
+                <div class="cv-section" id="skills-section">
+                    <div class="section-header" onclick="toggleSection('skills-content', this.querySelector('.toggle-btn'))">
+                        <h3>
+                            <span class="lang-en active">Skills & Competencies</span>
+                            <span class="lang-swe">Färdigheter & Kompetenser</span>
+                            <span class="lang-fin">Taidot & Pätevyydet</span>
+                            <span class="lang-nl">Vaardigheden & Competenties</span>
+                        </h3>
+                        <span class="toggle-btn">▶</span>
+                    </div>
+                    <div class="section-content hidden" id="skills-content">
+                        <div class="skills-grid">
+                            <!-- Languages -->
+                            <div>
+                                <h4>
+                                    <span class="lang-en active">Languages</span>
+                                    <span class="lang-swe">Språk</span>
+                                    <span class="lang-fin">Kielet</span>
+                                    <span class="lang-nl">Talen</span>
+                                </h4>
+                                <ul style="list-style: none; padding: 0;">
+                                    <li><strong>Swedish:</strong> <span class="lang-en active">Native</span><span class="lang-swe">Modersmål</span><span class="lang-fin">Äidinkieli</span><span class="lang-nl">Moedertaal</span></li>
+                                    <li><strong>English:</strong> <span class="lang-en active">Excellent</span><span class="lang-swe">Utmärkt</span><span class="lang-fin">Erinomainen</span><span class="lang-nl">Uitstekend</span></li>
+                                    <li><strong>Finnish:</strong> <span class="lang-en active">Strong</span><span class="lang-swe">Stark</span><span class="lang-fin">Vahva</span><span class="lang-nl">Sterk</span></li>
+                                    <li><strong>Dutch:</strong> <span class="lang-en active">Intermediate</span><span class="lang-swe">Medel</span><span class="lang-fin">Keskitaso</span><span class="lang-nl">Gemiddeld</span></li>
+                                </ul>
+                            </div>
+                            
+                            <!-- Software -->
+                            <div>
+                                <h4>
+                                    <span class="lang-en active">Software</span>
+                                    <span class="lang-swe">Programvara</span>
+                                    <span class="lang-fin">Ohjelmistot</span>
+                                    <span class="lang-nl">Software</span>
+                                </h4>
+                                <ul style="list-style: none; padding: 0;">
+                                    <li><strong>Excel, Word, PowerPoint:</strong> <span class="lang-en active">Expert</span><span class="lang-swe">Expert</span><span class="lang-fin">Asiantuntija</span><span class="lang-nl">Expert</span></li>
+                                    <li><strong>Temas, Outlook:</strong> <span class="lang-en active">Expert</span><span class="lang-swe">Expert</span><span class="lang-fin">Asiantuntija</span><span class="lang-nl">Expert</span></li>
+                                    <li><strong>Trello, Jira:</strong> <span class="lang-en active">Intermediate</span><span class="lang-swe">Medel</span><span class="lang-fin">Keskitaso</span><span class="lang-nl">Gemiddeld</span></li>
+                                    <li><strong>HTML, CSS, JS:</strong> <span class="lang-en active">Beginner</span><span class="lang-swe">Nybörjare</span><span class="lang-fin">Aloittelija</span><span class="lang-nl">Beginner</span></li>
+                                    <li><strong>PowerBI:</strong> <span class="lang-en active">Beginner</span><span class="lang-swe">Nybörjare</span><span class="lang-fin">Aloittelija</span><span class="lang-nl">Beginner</span></li>
+                                    <li><strong>VS Code:</strong> <span class="lang-en active">Familiar with extensions</span><span class="lang-swe">Kunnig med tillägg</span><span class="lang-fin">Tuttu laajennusten kanssa</span><span class="lang-nl">Bekend met extensies</span></li>
+                                </ul>
+                            </div>
+                            
+                            <!-- ERP and GIS -->
+                            <div>
+                                <h4>
+                                    <span class="lang-en active">ERP and GIS</span>
+                                    <span class="lang-swe">ERP och GIS</span>
+                                    <span class="lang-fin">ERP ja GIS</span>
+                                    <span class="lang-nl">ERP en GIS</span>
+                                </h4>
+                                <ul style="list-style: none; padding: 0;">
+                                    <li><strong>CGI - V.S.O.P</strong> - <span class="lang-en">ERP</span><span class="lang-swe">ERP</span><span class="lang-fin">ERP</span><span class="lang-nl">ERP</span> - <span class="lang-en active">Good</span><span class="lang-swe">Bra</span><span class="lang-fin">Hyvä</span><span class="lang-nl">Goed</span></li>
+                                    <li><strong>Tieto - Fox Ax</strong> - <span class="lang-en">ERP</span><span class="lang-swe">ERP</span><span class="lang-fin">ERP</span><span class="lang-nl">ERP</span> - <span class="lang-en active">Good</span><span class="lang-swe">Bra</span><span class="lang-fin">Hyvä</span><span class="lang-nl">Goed</span></li>
+                                    <li><strong>Sitowise - Foresta</strong> - <span class="lang-en">GIS</span><span class="lang-swe">GIS</span><span class="lang-fin">GIS</span><span class="lang-nl">GIS</span> - <span class="lang-en active">Good</span><span class="lang-swe">Bra</span><span class="lang-fin">Hyvä</span><span class="lang-nl">Goed</span></li>
+                                    <li><strong>Bergvik skog - BESK</strong> - <span class="lang-en">GIS</span><span class="lang-swe">GIS</span><span class="lang-fin">GIS</span><span class="lang-nl">GIS</span> - <span class="lang-en active">Good</span><span class="lang-swe">Bra</span><span class="lang-fin">Hyvä</span><span class="lang-nl">Goed</span></li>
+                                    <li><strong>Trimble - Woodforce</strong> - <span class="lang-en">ERP</span><span class="lang-swe">ERP</span><span class="lang-fin">ERP</span><span class="lang-nl">ERP</span> - <span class="lang-en active">Good</span><span class="lang-swe">Bra</span><span class="lang-fin">Hyvä</span><span class="lang-nl">Goed</span></li>
+                                </ul>
+                            </div>
                         </div>
-                        
-                        <!-- Software -->
-                        <div>
-                            <h4>
-                                <span class="lang-en active">Software</span>
-                                <span class="lang-swe">Programvara</span>
-                                <span class="lang-fin">Ohjelmistot</span>
-                                <span class="lang-nl">Software</span>
-                            </h4>
-                            <ul style="list-style: none; padding: 0;">
-                                <li><strong>Excel, Word, PowerPoint:</strong> <span class="lang-en active">Expert</span><span class="lang-swe">Expert</span><span class="lang-fin">Asiantuntija</span><span class="lang-nl">Expert</span></li>
-                                <li><strong>Temas, Outlook:</strong> <span class="lang-en active">Expert</span><span class="lang-swe">Expert</span><span class="lang-fin">Asiantuntija</span><span class="lang-nl">Expert</span></li>
-                                <li><strong>Trello, Jira:</strong> <span class="lang-en active">Intermediate</span><span class="lang-swe">Medel</span><span class="lang-fin">Keskitaso</span><span class="lang-nl">Gemiddeld</span></li>
-                                <li><strong>HTML, CSS, JS:</strong> <span class="lang-en active">Beginner</span><span class="lang-swe">Nybörjare</span><span class="lang-fin">Aloittelija</span><span class="lang-nl">Beginner</span></li>
-                                <li><strong>PowerBI:</strong> <span class="lang-en active">Beginner</span><span class="lang-swe">Nybörjare</span><span class="lang-fin">Aloittelija</span><span class="lang-nl">Beginner</span></li>
-                                <li><strong>VS Code:</strong> <span class="lang-en active">Familiar with extensions</span><span class="lang-swe">Kunnig med tillägg</span><span class="lang-fin">Tuttu laajennusten kanssa</span><span class="lang-nl">Bekend met extensies</span></li>
-                            </ul>
-                        </div>
-                        
-                        <!-- Hobbies -->
-                        <div>
-                            <h4>
-                                <span class="lang-en active">Hobbies</span>
-                                <span class="lang-swe">Hobbyer</span>
-                                <span class="lang-fin">Harrastukset</span>
-                                <span class="lang-nl">Hobby's</span>
-                            </h4>
-                            <ul style="list-style: none; padding: 0;">
-                                <li><span class="lang-en active">• PC Gaming</span><span class="lang-swe">• PC-spel</span><span class="lang-fin">• PC-pelit</span><span class="lang-nl">• PC-gaming</span></li>
-                                <li><span class="lang-en active">• Carpentry</span><span class="lang-swe">• Snickeri</span><span class="lang-fin">• Puutyöt</span><span class="lang-nl">• Timmerwerk</span></li>
-                                <li><span class="lang-en active">• Coding</span><span class="lang-swe">• Kodning</span><span class="lang-fin">• Koodaus</span><span class="lang-nl">• Coderen</span></li>
-                                <li><span class="lang-en active">• Fitness Training</span><span class="lang-swe">• Träning</span><span class="lang-fin">• Kuntoutuminen</span><span class="lang-nl">• Fitness</span></li>
-                                <li><span class="lang-en active">• Content Creation</span><span class="lang-swe">• Innehållsskapande</span><span class="lang-fin">• Sisällöntuotanto</span><span class="lang-nl">• Content Creatie</span></li>
-                                <li><span class="lang-en active">• Lifelong Learning</span><span class="lang-swe">• Livslångt lärande</span><span class="lang-fin">• Jatkuva oppiminen</span><span class="lang-nl">• Continu Leren</span></li>
-                            </ul>
-                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== HOBBIES SECTION (collapsible) ==================== -->
+    <section class="hobbies">
+        <div class="container">
+            <h2>
+                <span class="lang-en active">Hobbies</span>
+                <span class="lang-swe">Hobbyer</span>
+                <span class="lang-fin">Harrastukset</span>
+                <span class="lang-nl">Hobby's</span>
+            </h2>
+            <button class="hobbies-toggle" id="hobbies-toggle" onclick="toggleHobbies()">
+                <span class="arrow">▶</span> 
+                <span class="lang-en active">Show Hobbies</span>
+                <span class="lang-swe">Visa hobbyer</span>
+                <span class="lang-fin">Näytä harrastukset</span>
+                <span class="lang-nl">Toon hobby's</span>
+            </button>
+            <div class="hobbies-content hidden" id="hobbies-content">
+                <ul>
+                    <!-- PC Gaming -->
+                    <li>
+                        <span class="hobby-name">
+                            <span class="lang-en active">PC Gaming</span>
+                            <span class="lang-swe">PC-spel</span>
+                            <span class="lang-fin">PC-pelit</span>
+                            <span class="lang-nl">PC-gaming</span>
+                        </span>
+                        <span class="hobby-details">
+                            <span class="lang-en active">MMO, FPS, RPG, TRPG</span>
+                            <span class="lang-swe">MMO, FPS, RPG, TRPG</span>
+                            <span class="lang-fin">MMO, FPS, RPG, TRPG</span>
+                            <span class="lang-nl">MMO, FPS, RPG, TRPG</span>
+                        </span>
+                    </li>
+                    <!-- Carpentry -->
+                    <li>
+                        <span class="hobby-name">
+                            <span class="lang-en active">Carpentry</span>
+                            <span class="lang-swe">Snickeri</span>
+                            <span class="lang-fin">Puutyöt</span>
+                            <span class="lang-nl">Timmerwerk</span>
+                        </span>
+                        <span class="hobby-details">
+                            <span class="lang-en active">Green Carpentry, Arts and Crafts, Cabinet Carpentry</span>
+                            <span class="lang-swe">Grönt snickeri, Konsthantverk, Möbelsnickeri</span>
+                            <span class="lang-fin">Vihreä puutyö, Käsityöt, Huonekalupuutyö</span>
+                            <span class="lang-nl">Groen timmerwerk, Kunst en ambacht, Meubelmakerij</span>
+                        </span>
+                    </li>
+                    <!-- Coding -->
+                    <li>
+                        <span class="hobby-name">
+                            <span class="lang-en active">Coding</span>
+                            <span class="lang-swe">Kodning</span>
+                            <span class="lang-fin">Koodaus</span>
+                            <span class="lang-nl">Coderen</span>
+                        </span>
+                        <span class="hobby-details">
+                            <span class="lang-en active">Games, Apps and Websites</span>
+                            <span class="lang-swe">Spel, Appar och Webbplatser</span>
+                            <span class="lang-fin">Pelit, Sovellukset ja Verkkosivustot</span>
+                            <span class="lang-nl">Spellen, Apps en Websites</span>
+                        </span>
+                    </li>
+                    <!-- Fitness training -->
+                    <li>
+                        <span class="hobby-name">
+                            <span class="lang-en active">Fitness training</span>
+                            <span class="lang-swe">Träning</span>
+                            <span class="lang-fin">Kuntoilu</span>
+                            <span class="lang-nl">Fitness</span>
+                        </span>
+                        <span class="hobby-details">
+                            <span class="lang-en active">Strong man</span>
+                            <span class="lang-swe">Starkeman</span>
+                            <span class="lang-fin">Voimamies</span>
+                            <span class="lang-nl">Sterke man</span>
+                        </span>
+                    </li>
+                    <!-- Lifelong learning -->
+                    <li>
+                        <span class="hobby-name">
+                            <span class="lang-en active">Lifelong learning</span>
+                            <span class="lang-swe">Livslångt lärande</span>
+                            <span class="lang-fin">Jatkuva oppiminen</span>
+                            <span class="lang-nl">Levenslang leren</span>
+                        </span>
+                        <span class="hobby-details">
+                            <span class="lang-en active">watching documentaries, Reading scientific papers and philosophy, questioning things in overall to get a better understanding of the world.</span>
+                            <span class="lang-swe">titta på dokumentärer, läsa vetenskapliga artiklar och filosofi, ifrågasätta saker för att få en bättre förståelse av världen.</span>
+                            <span class="lang-fin">dokumenttien katselu, tieteellisten artikkelien ja filosofian lukeminen, asioiden kyseenalaistaminen saadakseni paremman käsityksen maailmasta.</span>
+                            <span class="lang-nl">documentaires kijken, wetenschappelijke artikelen en filosofie lezen, dingen in vraag stellen om de wereld beter te begrijpen.</span>
+                        </span>
+                    </li>
+                </ul>
+
+                <!-- Music subsection with introductory text -->
+                <h3 style="margin: 30px 0 15px; color: #1a2a3a;">🎵 Music</h3>
+                <p style="margin-bottom: 20px; line-height: 1.7;">
+                    <span class="lang-en active">Music has been part of my life since the age of six, when I received a French horn. From ages 6 to 17, I played French horn, trumpet, saxophone, and trombone. When the orchestra I was playing in lost its drummer, I took up drums and was hooked, I still love it. At 17, I co-founded the punk band Vulgaris with friends. We later evolved into Garagem until parting ways when I was 24, after which I continued as a solo artist. Drums also led me to music school, where I graduated as a musician with a focus on music production. I occasionally give drum lessons in my spare time but prefer to keep it as a hobby. Below is a selection of my music.</span>
+                    <span class="lang-swe">Musik har varit en del av mitt liv sedan sex års ålder, då jag fick ett valthorn. Från 6 till 17 år spelade jag valthorn, trumpet, saxofon och trombon. När orkestern jag spelade i förlorade sin trummis, tog jag upp trummorna och fastnade, jag älskar det fortfarande. Vid 17 startade jag punkbandet Vulgaris med vänner. Vi utvecklades senare till Garagem tills vi gick skilda vägar när jag var 24, varefter jag fortsatte som soloartist. Trummorna ledde mig också till musikskola, där jag utexaminerades som musiker med inriktning musikproduktion. Jag ger ibland trumlektioner på fritiden men föredrar att hålla det som en hobby. Nedan är ett urval av min musik.</span>
+                    <span class="lang-fin">Musiikki on ollut osa elämääni kuusivuotiaasta lähtien, kun sain käyrätorven. 6–17-vuotiaana soitin käyrätorvea, trumpettia, saksofonia ja pasuunaa. Kun orkesteri, jossa soitin, menetti rumpalinsa, tartuin rumpuihin ja jäin koukkuun, rakastan niitä yhä. 17-vuotiaana perustin ystävieni kanssa punk-yhtye Vulgariksen. Myöhemmin kehityimme Garagemiksi, kunnes erosimme 24-vuotiaana, minkä jälkeen olen jatkanut soolona. Rummut johtivat minut myös musiikkiopistoon, josta valmistuin muusikoksi painopisteenä musiikkituotanto. Annan satunnaisesti rumputunteja vapaa-ajallani, mutta pidän sen mieluummin harrastuksena. Alla valikoima musiikkiani.</span>
+                    <span class="lang-nl">Muziek is een deel van mijn leven sinds ik zes was, toen ik een hoorn kreeg. Van mijn 6e tot 17e speelde ik hoorn, trompet, saxofoon en trombone. Toen het orkest waarin ik speelde zijn drummer verloor, pakte ik de drums op en raakte verslaafd, ik hou er nog steeds van. Op mijn 17e richtte ik met vrienden de punkband Vulgaris op. Later evolueerden we naar Garagem tot we uit elkaar gingen toen ik 24 was, waarna ik solo verderging. Drums leidden me ook naar de muziekschool, waar ik afstudeerde als muzikant met een focus op muziekproductie. Ik geef af en toe drumles in mijn vrije tijd, maar houd het liever als hobby. Hieronder een selectie van mijn muziek.</span>
+                </p>
+                <div class="music-grid">
+                    <!-- Vulgaris - Burnout city 2006 -->
+                    <div class="music-card">
+                        <strong>Vulgaris</strong><br>
+                        <span class="music-details">
+                            <span>Punk</span>Burnout city (First version)<br>
+                            <small>2006</small>
+                        </span>
+                        <a href="https://www.youtube.com/watch?v=JcYi5r3bdEc" target="_blank" class="music-link">▶ Play</a>
+                    </div>
+                    <!-- Vulgaris - Burnout city 2010 -->
+                    <div class="music-card">
+                        <strong>Vulgaris</strong><br>
+                        <span class="music-details">
+                            <span>Punk</span> Burnout city<br>
+                            <small>2010</small>
+                        </span>
+                        <a href="https://www.youtube.com/watch?v=ndNnEZM-25U" target="_blank" class="music-link">▶ Play</a>
+                    </div>
+                    <!-- Garagem - Life is to short -->
+                    <div class="music-card">
+                        <strong>Garagem</strong><br>
+                        <span class="music-details">
+                            <span>Punk</span> Life is to short<br>
+                            <small>2011</small>
+                        </span>
+                        <a href="https://www.youtube.com/watch?v=EWaDjJDfUi4" target="_blank" class="music-link">▶ Play</a>
+                    </div>
+                    <!-- Solo project - War is not hell -->
+                    <div class="music-card">
+                        <strong>Solo project</strong><br>
+                        <span class="music-details">
+                            <span>Death Metal</span> War is not hell<br>
+                            <small>2025</small>
+                        </span>
+                        <a href="https://www.youtube.com/watch?v=szfi02uiLWo" target="_blank" class="music-link">▶ Play</a>
+                    </div>
+                    <!-- Solo project - The firth beneath my nails -->
+                    <div class="music-card">
+                        <strong>Solo project</strong><br>
+                        <span class="music-details">
+                            <span>Power metal</span> The dirth beneath my nails<br>
+                            <small>2025</small>
+                        </span>
+                        <a href="https://www.youtube.com/watch?v=zJs82fOhP4w" target="_blank" class="music-link">▶ Play</a>
+                    </div>
+                    <!-- Solo project - Zealot -->
+                    <div class="music-card">
+                        <strong>Solo project</strong><br>
+                        <span class="music-details">
+                            <span>Techno / Dabb</span> Zealot<br>
+                            <small>2025</small>
+                        </span>
+                        <a href="https://www.youtube.com/watch?v=QX5m-Qloauc" target="_blank" class="music-link">▶ Play</a>
                     </div>
                 </div>
             </div>
@@ -1264,28 +1704,36 @@
         </div>
     </div>
 
-    <!-- ==================== LANGUAGE SWITCHING SCRIPT ==================== -->
+    <!-- ==================== LANGUAGE SWITCHING AND TOGGLE SCRIPT ==================== -->
     <script>
         function switchLanguage(lang) {
-            // Ta bort active class från alla knappar
             document.querySelectorAll('.lang-btn').forEach(btn => {
                 btn.classList.remove('active');
             });
-            
-            // Lägg till active class på klickad knapp (using event)
-            // We need to get the event from the button click
-            // The inline onclick passes the event as 'event'
             event.target.classList.add('active');
             
-            // Ta bort active class från alla språkelement
             document.querySelectorAll('[class*="lang-"]').forEach(el => {
                 el.classList.remove('active');
             });
             
-            // Lägg till active class på alla element med valt språk
             document.querySelectorAll('.lang-' + lang).forEach(el => {
                 el.classList.add('active');
             });
+        }
+
+        function toggleHobbies() {
+            var content = document.getElementById('hobbies-content');
+            var toggleBtn = document.getElementById('hobbies-toggle');
+            var arrow = toggleBtn.querySelector('.arrow');
+            content.classList.toggle('hidden');
+            arrow.innerHTML = content.classList.contains('hidden') ? '▶' : '▼';
+        }
+
+        function toggleSection(contentId, btn) {
+            var content = document.getElementById(contentId);
+            content.classList.toggle('hidden');
+            btn.classList.toggle('rotated');
+            btn.innerHTML = content.classList.contains('hidden') ? '▶' : '▼';
         }
     </script>
 </body>
